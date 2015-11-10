@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Help Tutorial Example</string>
+
+    <string name="slide_1_african_story_books">New African Story Books</string>
+    <string name="slide_2_volunteer_professionals">Created by Volunteer Professionals</string>
+    <string name="slide_3_download_and_go">Download and Read on the go</string>
+    <string name="slide_4_different_languages">Available in different languages</string>
+    <string name="slide_1_african_story_books_subtitle">That anyone can freely translate and distribute.</string>
+    <string name="slide_2_volunteer_professionals_subtitle">On a single day, designers, writers and illustrators meet to create cool books.</string>
+    <string name="slide_3_download_and_go_subtitle" >On the bus, in a train, wherever you are - the books are there too.</string>
+    <string name="slide_4_different_languages_subtitle">English, Zulu, Afrikaans, Xhosa and more!</string>
+    <string name="view_sample_tut">View Tutorial Example</string>
+
+</resources>

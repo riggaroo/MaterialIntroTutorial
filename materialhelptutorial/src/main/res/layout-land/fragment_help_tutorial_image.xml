@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:background="#000000">
+    <ImageView
+        android:id="@+id/fragment_help_tutorial_imageview_background"
+        android:layout_width="0dp"
+        app:layout_widthPercent="50%"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitCenter" />
+    <ImageView
+        android:id="@+id/fragment_help_tutorial_imageview"
+        android:layout_width="0dp"
+        app:layout_widthPercent="50%"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        tools:src="@drawable/ic_navigate_next"
+        android:scaleType="fitCenter" />
+    <TextView
+        android:id="@+id/fragment_help_tutorial_text"
+        android:layout_width="0dp"
+        app:layout_widthPercent="50%"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fragment_help_tutorial_imageview"
+        android:layout_toEndOf="@id/fragment_help_tutorial_imageview"
+        android:autoLink="web"
+        android:fontFamily="sans-serif"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_centerVertical="true"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:textSize="24sp"
+        tools:text="Browse this wonderful tutorial." />
+
+    <TextView
+        android:id="@+id/fragment_help_tutorial_subtitle_text"
+        android:layout_width="0dp"
+        app:layout_widthPercent="50%"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_toRightOf="@id/fragment_help_tutorial_imageview"
+        android:layout_toEndOf="@id/fragment_help_tutorial_imageview"
+        android:layout_below="@id/fragment_help_tutorial_text"
+        android:layout_marginRight="36dp"
+        android:autoLink="web"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:text="Line 2 of this description" />
+
+
+</android.support.percent.PercentRelativeLayout>
