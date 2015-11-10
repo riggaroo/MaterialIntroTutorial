@@ -2,6 +2,7 @@ package za.co.riggaroo.materialhelptutorial;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,18 +45,25 @@ public class MaterialTutorialFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View v = inflater.inflate(R.layout.fragment_help_tutorial_image, container, false);
+        v.setTag(page);
 
         ImageView imageViewFront = (ImageView) v.findViewById(R.id.fragment_help_tutorial_imageview);
         ImageView imageViewBack = (ImageView) v.findViewById(R.id.fragment_help_tutorial_imageview_background);
+        TextView textViewSubTitle = (TextView) v.findViewById(R.id.fragment_help_tutorial_subtitle_text);
 
         TextView textView = (TextView) v.findViewById(R.id.fragment_help_tutorial_text);
-        textView.setText(tutorialItem.getTitleText());
-        v.setTag(page);
-
-        TextView textViewSubTitle = (TextView) v.findViewById(R.id.fragment_help_tutorial_subtitle_text);
-        textViewSubTitle.setText(tutorialItem.getSubTitleText());
-        Glide.with(this).load(tutorialItem.getBackgroundImageUrl()).into(imageViewBack);
-        Glide.with(this).load(tutorialItem.getForegroundImageUrl()).into(imageViewFront);
+        if (!TextUtils.isEmpty(tutorialItem.getTitleText())) {
+            textView.setText(tutorialItem.getTitleText());
+        }
+        if (!TextUtils.isEmpty(tutorialItem.getSubTitleText())) {
+            textViewSubTitle.setText(tutorialItem.getSubTitleText());
+        }
+        if (tutorialItem.getBackgroundImageRes() != -1) {
+            Glide.with(this).load(tutorialItem.getBackgroundImageRes()).into(imageViewBack);
+        }
+        if (tutorialItem.getForegroundImageRes() != -1) {
+            Glide.with(this).load(tutorialItem.getForegroundImageRes()).into(imageViewFront);
+        }
         return v;
     }
 
