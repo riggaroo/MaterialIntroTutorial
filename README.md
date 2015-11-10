@@ -1,8 +1,12 @@
 # MaterialIntroTutorial
 Android Library demonstrating a material intro tutorial much like the ones on Google Sheets
 
-This library shows a help or introduction tutorial into your application. Its inspired by the one in the Google Sheets Android app. 
+This library creates an introduction screen for your application.
 The help tutorial takes the background colour set for each page and when scrolling between the two pages, the two colours will fade into one another.
+
+Example:
+![](example-usage.gif)
+
 
 [ ![Download](https://api.bintray.com/packages/spongebobrf/maven/MaterialIntroTutorial/images/download.svg) ](https://bintray.com/spongebobrf/maven/MaterialIntroTutorial/_latestVersion)
 
@@ -35,13 +39,12 @@ In your activity, create a list of TutorialItems (set the title, subtitle, backg
     }
 ```
 You should see a tutorial like below:
-![](example-usage.gif)
+
 
 This library is using the following:
 - CirclePageIndicator
 - Glide for image loading
 - Percent Support Library
-
 
 # License 
 
