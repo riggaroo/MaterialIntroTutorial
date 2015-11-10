@@ -5,6 +5,7 @@ This library creates an introduction screen for your application.
 The help tutorial takes the background colour set for each page and when scrolling between the two pages, the two colours will fade into one another.
 
 Example:
+
 ![](example-usage.gif)
 
 
@@ -14,10 +15,10 @@ Example:
 
 Add the following into your build.gradle:
 ```groovy
-        compile 'za.co.riggaroo:materialhelptutorial:1.0.0'
+        compile 'za.co.riggaroo:materialhelptutorial:1.0.1'
 ```
 In your activity, create a list of TutorialItems (set the title, subtitle, background colour and image drawable int). Pass them onto the MaterialTutorialActivity and start the activity for result.
-```android
+```java
     public void loadTutorial() {
         Intent mainAct = new Intent(this, MaterialTutorialActivity.class);
         mainAct.putParcelableArrayListExtra(MaterialTutorialActivity.MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS, getTutorialItems(this));
