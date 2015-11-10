@@ -42,9 +42,9 @@ You should see a tutorial like below:
 
 
 This library is using the following:
-- CirclePageIndicator
-- Glide for image loading
-- Percent Support Library
+- CirclePageIndicator https://github.com/JakeWharton/ViewPagerIndicator
+- Glide for image loading - https://github.com/bumptech/glide
+- Percent Support Library - http://developer.android.com/intl/ru/reference/android/support/percent/package-summary.html
 
 # License 
 
