@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.1"
+version = "1.0.2"
 group = "za.co.riggaroo"
 
 def siteUrl = 'https://github.com/spongebobrf/MaterialIntroTutorial'
@@ -15,8 +15,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 2
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -35,54 +35,56 @@ dependencies {
 }
 
 
+if (hasProperty("BINTRAY_USER")){
+    bintray {
+        user = BINTRAY_USER
+        key = BINTRAY_KEY
 
-bintray {
-    user = BINTRAY_USER
-    key = BINTRAY_KEY
-
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        name = "MaterialIntroTutorial"
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true
+        configurations = ['archives']
+        pkg {
+            repo = "maven"
+            name = "MaterialIntroTutorial"
+            websiteUrl = siteUrl
+            vcsUrl = gitUrl
+            licenses = ["Apache-2.0"]
+            publish = true
+        }
     }
-}
 
 
-install {
-    repositories.mavenInstaller {
-        pom {
-            project {
-                packaging 'aar'
+    install {
+        repositories.mavenInstaller {
+            pom {
+                project {
+                    packaging 'aar'
 
-                name 'Android Library for a material intro tutorial'
-                url siteUrl
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id 'riggaroo'
-                        name 'Rebecca Franks'
-                        email 'franks.rebecca@gmail.com'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
+                    name 'Android Library for a material intro tutorial'
                     url siteUrl
+                    licenses {
+                        license {
+                            name 'The Apache Software License, Version 2.0'
+                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id 'riggaroo'
+                            name 'Rebecca Franks'
+                            email 'franks.rebecca@gmail.com'
+                        }
+                    }
+                    scm {
+                        connection gitUrl
+                        developerConnection gitUrl
+                        url siteUrl
 
+                    }
                 }
             }
         }
     }
 }
+
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
