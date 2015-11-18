@@ -54,9 +54,13 @@ public class MaterialTutorialFragment extends Fragment {
         TextView textView = (TextView) v.findViewById(R.id.fragment_help_tutorial_text);
         if (!TextUtils.isEmpty(tutorialItem.getTitleText())) {
             textView.setText(tutorialItem.getTitleText());
+        } else if (tutorialItem.getTitleTextRes() != -1) {
+            textView.setText(tutorialItem.getTitleTextRes());
         }
         if (!TextUtils.isEmpty(tutorialItem.getSubTitleText())) {
             textViewSubTitle.setText(tutorialItem.getSubTitleText());
+        } else if (tutorialItem.getSubTitleTextRes() != -1) {
+            textViewSubTitle.setText(tutorialItem.getSubTitleTextRes());
         }
         if (tutorialItem.getBackgroundImageRes() != -1) {
             Glide.with(this).load(tutorialItem.getBackgroundImageRes()).into(imageViewBack);

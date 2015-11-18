@@ -3,15 +3,22 @@ package za.co.riggaroo.materialhelptutorial;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 
 public class TutorialItem implements Parcelable {
     private String titleText;
     private String subTitleText;
     private int backgroundColor;
-    private int foregroundImageRes;
+    private int foregroundImageRes = -1;
     private int backgroundImageRes = -1;
+    private int titleTextRes = -1;
+    private int subTitleTextRes = -1;
 
-    public TutorialItem(String titleText, String subTitleText, int backgroundColor, int foregroundImageRes, int backgroundImageRes) {
+    public TutorialItem(@NonNull String titleText, @Nullable String subTitleText, @ColorRes int backgroundColor, @DrawableRes int foregroundImageRes, @DrawableRes int backgroundImageRes) {
         this.titleText = titleText;
         this.subTitleText = subTitleText;
         this.backgroundColor = backgroundColor;
@@ -19,9 +26,24 @@ public class TutorialItem implements Parcelable {
         this.backgroundImageRes = backgroundImageRes;
     }
 
-    public TutorialItem(String titleText, String subTitleText, int backgroundColor, int foregroundImageRes) {
+    public TutorialItem(@NonNull String titleText, @Nullable String subTitleText, @ColorRes int backgroundColor, @DrawableRes int foregroundImageRes) {
         this.titleText = titleText;
         this.subTitleText = subTitleText;
+        this.backgroundColor = backgroundColor;
+        this.foregroundImageRes = foregroundImageRes;
+    }
+
+    public TutorialItem(@StringRes int titleTextRes, @StringRes int subTitleTextRes, @ColorRes int backgroundColor, @DrawableRes int foregroundImageRes, @DrawableRes int backgroundImageRes) {
+        this.titleTextRes = titleTextRes;
+        this.subTitleTextRes = subTitleTextRes;
+        this.backgroundColor = backgroundColor;
+        this.foregroundImageRes = foregroundImageRes;
+        this.backgroundImageRes = backgroundImageRes;
+    }
+
+    public TutorialItem(@StringRes int titleTextRes, @StringRes int subTitleTextRes, @ColorRes int backgroundColor, @DrawableRes int foregroundImageRes) {
+        this.subTitleTextRes = titleTextRes;
+        this.subTitleTextRes = subTitleTextRes;
         this.backgroundColor = backgroundColor;
         this.foregroundImageRes = foregroundImageRes;
     }
@@ -46,6 +68,14 @@ public class TutorialItem implements Parcelable {
         return backgroundImageRes;
     }
 
+    public int getTitleTextRes() {
+        return titleTextRes;
+    }
+
+    public int getSubTitleTextRes() {
+        return subTitleTextRes;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -58,6 +88,8 @@ public class TutorialItem implements Parcelable {
         dest.writeInt(this.backgroundColor);
         dest.writeInt(this.foregroundImageRes);
         dest.writeInt(this.backgroundImageRes);
+        dest.writeInt(this.titleTextRes);
+        dest.writeInt(this.subTitleTextRes);
     }
 
     protected TutorialItem(Parcel in) {
@@ -66,6 +98,8 @@ public class TutorialItem implements Parcelable {
         this.backgroundColor = in.readInt();
         this.foregroundImageRes = in.readInt();
         this.backgroundImageRes = in.readInt();
+        this.titleTextRes = in.readInt();
+        this.subTitleTextRes = in.readInt();
     }
 
     public static final Parcelable.Creator<TutorialItem> CREATOR = new Parcelable.Creator<TutorialItem>() {
