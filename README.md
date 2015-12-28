@@ -11,6 +11,7 @@ Example:
 
 [ ![Download](https://api.bintray.com/packages/spongebobrf/maven/MaterialIntroTutorial/images/download.svg) ](https://bintray.com/spongebobrf/maven/MaterialIntroTutorial/_latestVersion)
 
+[![Build Status](https://travis-ci.org/spongebobrf/MaterialIntroTutorial.svg)](https://travis-ci.org/spongebobrf/MaterialIntroTutorial)
 # Example Usage
 
 Add the following into your build.gradle:
