@@ -39,3 +39,8 @@ before_script:
 script:
   - android list target
   - ./gradlew connectedAndroidTest
+
+before_install:
+- pip install --user codecov
+after_success:
+- codecov
