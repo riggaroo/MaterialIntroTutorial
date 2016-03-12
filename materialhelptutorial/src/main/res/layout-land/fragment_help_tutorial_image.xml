@@ -35,7 +35,7 @@
         android:padding="8dp"
         android:layout_marginTop="8dp"
         android:layout_centerVertical="true"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/tutorial_titleTextColor"
         android:layout_marginLeft="36dp"
         android:layout_marginRight="36dp"
         android:textSize="24sp"
@@ -55,7 +55,7 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif"
         android:padding="8dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/tutorial_subtitleTextColor"
         android:textSize="16sp"
         tools:text="Line 2 of this description" />
 

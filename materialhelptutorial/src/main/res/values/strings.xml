@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">MaterialHelpTutorial</string>
+    <string name="app_name">help tutorial app</string>
     <string name="tutorial_done">DONE</string>
-    <string name="skip">SKIP</string>
-
+    <string name="tutorial_skip">SKIP</string>
 </resources>
