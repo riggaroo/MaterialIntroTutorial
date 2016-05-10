@@ -42,7 +42,7 @@ public class TutorialItem implements Parcelable {
     }
 
     public TutorialItem(@StringRes int titleTextRes, @StringRes int subTitleTextRes, @ColorRes int backgroundColor, @DrawableRes int foregroundImageRes) {
-        this.subTitleTextRes = titleTextRes;
+        this.titleTextRes = titleTextRes;
         this.subTitleTextRes = subTitleTextRes;
         this.backgroundColor = backgroundColor;
         this.foregroundImageRes = foregroundImageRes;
