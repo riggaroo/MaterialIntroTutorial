@@ -31,6 +31,10 @@ In your activity, create a list of TutorialItems (set the title, subtitle, backg
         TutorialItem tutorialItem1 = new TutorialItem(context.getString(R.string.slide_1_african_story_books), context.getString(R.string.slide_1_african_story_books_subtitle),
                 R.color.slide_1, R.drawable.tut_page_1_front,  R.drawable.tut_page_1_background);
 
+	// You can also add gifs, [IN BETA YET] (because Glide is awesome!)
+	TutorialItem tutorialItem1 = new TutorialItem(context.getString(R.string.slide_1_african_story_books), context.getString(R.string.slide_1_african_story_books_subtitle),
+                R.color.slide_1, R.drawable.gif_drawable, true);
+
         ...
 
         ArrayList<TutorialItem> tutorialItems = new ArrayList<>();
