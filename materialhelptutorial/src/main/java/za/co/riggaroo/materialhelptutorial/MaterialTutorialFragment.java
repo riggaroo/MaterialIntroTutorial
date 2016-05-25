@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 /**
  * @author rebeccafranks
@@ -65,8 +66,11 @@ public class MaterialTutorialFragment extends Fragment {
         if (tutorialItem.getBackgroundImageRes() != -1) {
             Glide.with(this).load(tutorialItem.getBackgroundImageRes()).into(imageViewBack);
         }
-        if (tutorialItem.getForegroundImageRes() != -1) {
+        if (tutorialItem.getForegroundImageRes() != -1 && !tutorialItem.isGif()) {
             Glide.with(this).load(tutorialItem.getForegroundImageRes()).into(imageViewFront);
+        }
+        if (tutorialItem.getForegroundImageRes() != -1 && tutorialItem.isGif()){
+            Glide.with(this).load(tutorialItem.getForegroundImageRes()).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imageViewFront);
         }
         return v;
     }

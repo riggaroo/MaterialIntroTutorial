@@ -17,6 +17,7 @@ public class TutorialItem implements Parcelable {
     private int backgroundImageRes = -1;
     private int titleTextRes = -1;
     private int subTitleTextRes = -1;
+    private boolean isGif = false;
 
     public TutorialItem(@NonNull String titleText, @Nullable String subTitleText, @ColorRes int backgroundColor, @DrawableRes int foregroundImageRes, @DrawableRes int backgroundImageRes) {
         this.titleText = titleText;
@@ -31,6 +32,14 @@ public class TutorialItem implements Parcelable {
         this.subTitleText = subTitleText;
         this.backgroundColor = backgroundColor;
         this.foregroundImageRes = foregroundImageRes;
+    }
+
+    public TutorialItem(@NonNull String titleText, @Nullable String subTitleText, @ColorRes int backgroundColor, @DrawableRes int foregroundImageRes, boolean isGif) {
+        this.titleText = titleText;
+        this.subTitleText = subTitleText;
+        this.backgroundColor = backgroundColor;
+        this.foregroundImageRes = foregroundImageRes;
+        this.isGif = isGif;
     }
 
     public TutorialItem(@StringRes int titleTextRes, @StringRes int subTitleTextRes, @ColorRes int backgroundColor, @DrawableRes int foregroundImageRes, @DrawableRes int backgroundImageRes) {
@@ -76,6 +85,10 @@ public class TutorialItem implements Parcelable {
         return subTitleTextRes;
     }
 
+    public boolean isGif() {
+        return isGif;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -90,6 +103,7 @@ public class TutorialItem implements Parcelable {
         dest.writeInt(this.backgroundImageRes);
         dest.writeInt(this.titleTextRes);
         dest.writeInt(this.subTitleTextRes);
+        dest.writeInt(this.isGif ? 1:0);
     }
 
     protected TutorialItem(Parcel in) {
@@ -100,6 +114,7 @@ public class TutorialItem implements Parcelable {
         this.backgroundImageRes = in.readInt();
         this.titleTextRes = in.readInt();
         this.subTitleTextRes = in.readInt();
+        this.isGif = in.readInt() == 1;
     }
 
     public static final Parcelable.Creator<TutorialItem> CREATOR = new Parcelable.Creator<TutorialItem>() {
