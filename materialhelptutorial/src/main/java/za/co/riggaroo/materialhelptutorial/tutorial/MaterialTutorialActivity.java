@@ -73,7 +73,12 @@ public class MaterialTutorialActivity extends AppCompatActivity implements Mater
             }
         });
         List<TutorialItem> tutorialItems = getIntent().getParcelableArrayListExtra(MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS);
-        materialTutorialPresenter.loadViewPagerFragments(tutorialItems);
+
+        if(tutorialItems == null) {
+            showEndTutorial();
+        } else {
+            materialTutorialPresenter.loadViewPagerFragments(tutorialItems);
+        }
     }
 
     private void setStatusBarColor() {
