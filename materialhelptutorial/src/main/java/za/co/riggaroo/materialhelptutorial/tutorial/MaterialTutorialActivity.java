@@ -21,7 +21,7 @@ import za.co.riggaroo.materialhelptutorial.adapter.MaterialTutorialAdapter;
 import za.co.riggaroo.materialhelptutorial.view.CirclePageIndicator;
 
 
-public class MaterialTutorialActivity extends AppCompatActivity implements MaterialTutorialContract.View {
+public class MaterialTutorialActivity extends AppCompatActivity implements MaterialTutorialContract.View, MaterialTutorialFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "MaterialTutActivity";
     public static final String MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS = "tutorial_items";
@@ -151,5 +151,15 @@ public class MaterialTutorialActivity extends AppCompatActivity implements Mater
                 }
 
         );
+    }
+
+    @Override
+    public Button getDoneButton() {
+        return mDoneButton;
+    }
+
+    @Override
+    public TextView getSkipButton() {
+        return mTextViewSkip;
     }
 }
