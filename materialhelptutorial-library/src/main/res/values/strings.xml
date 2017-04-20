@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">help tutorial app</string>
-    <string name="tutorial_done">DONE</string>
-    <string name="tutorial_skip">SKIP</string>
+    <string name="tutorial_done">CERRAR</string>
+    <string name="tutorial_skip">OMITIR</string>
 </resources>
