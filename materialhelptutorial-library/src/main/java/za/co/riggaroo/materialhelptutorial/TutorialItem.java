@@ -17,6 +17,8 @@ public class TutorialItem implements Parcelable {
     private int backgroundImageRes = -1;
     private int titleTextRes = -1;
     private int subTitleTextRes = -1;
+    private String skipButtonText;
+    private String doneButtonText;
     private boolean isGif = false;
 
     public TutorialItem(@NonNull String titleText, @Nullable String subTitleText, @ColorRes int backgroundColor, @DrawableRes int foregroundImageRes, @DrawableRes int backgroundImageRes) {
@@ -57,6 +59,16 @@ public class TutorialItem implements Parcelable {
         this.foregroundImageRes = foregroundImageRes;
     }
 
+    public TutorialItem(@Nullable String titleText, @Nullable String subTitleText, int backgroundColor, int foregroundImageRes, int backgroundImageRes, @Nullable String skipButtonText, @Nullable String doneButtonText) {
+        this.titleText = titleText;
+        this.subTitleText = subTitleText;
+        this.backgroundColor = backgroundColor;
+        this.foregroundImageRes = foregroundImageRes;
+        this.backgroundImageRes = backgroundImageRes;
+        this.skipButtonText = skipButtonText;
+        this.doneButtonText = doneButtonText;
+    }
+
     public String getTitleText() {
         return titleText;
     }
@@ -89,6 +101,14 @@ public class TutorialItem implements Parcelable {
         return isGif;
     }
 
+    public String getSkipButtonText() {
+        return skipButtonText;
+    }
+
+    public String getDoneButtonText() {
+        return doneButtonText;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -103,7 +123,9 @@ public class TutorialItem implements Parcelable {
         dest.writeInt(this.backgroundImageRes);
         dest.writeInt(this.titleTextRes);
         dest.writeInt(this.subTitleTextRes);
-        dest.writeInt(this.isGif ? 1:0);
+        dest.writeString(this.skipButtonText);
+        dest.writeString(this.doneButtonText);
+        dest.writeByte(this.isGif ? (byte) 1 : (byte) 0);
     }
 
     protected TutorialItem(Parcel in) {
@@ -114,14 +136,18 @@ public class TutorialItem implements Parcelable {
         this.backgroundImageRes = in.readInt();
         this.titleTextRes = in.readInt();
         this.subTitleTextRes = in.readInt();
-        this.isGif = in.readInt() == 1;
+        this.skipButtonText = in.readString();
+        this.doneButtonText = in.readString();
+        this.isGif = in.readByte() != 0;
     }
 
-    public static final Parcelable.Creator<TutorialItem> CREATOR = new Parcelable.Creator<TutorialItem>() {
+    public static final Creator<TutorialItem> CREATOR = new Creator<TutorialItem>() {
+        @Override
         public TutorialItem createFromParcel(Parcel source) {
             return new TutorialItem(source);
         }
 
+        @Override
         public TutorialItem[] newArray(int size) {
             return new TutorialItem[size];
         }

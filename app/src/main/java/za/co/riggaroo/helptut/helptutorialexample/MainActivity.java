@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private ArrayList<TutorialItem> getTutorialItems(Context context) {
+        TutorialItem tutorialItem = new TutorialItem("", "",  R.color.slide_1, R.drawable.tut_page_1_front, R.drawable.tut_page_1_front, "SALTEAR", "TERMINAR");
+
         TutorialItem tutorialItem1 = new TutorialItem(R.string.slide_1_african_story_books, R.string.slide_1_african_story_books,
                 R.color.slide_1, R.drawable.tut_page_1_front,  R.drawable.tut_page_1_background);
 
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 R.color.slide_4,  R.drawable.tut_page_4_foreground, R.drawable.tut_page_4_background);
 
         ArrayList<TutorialItem> tutorialItems = new ArrayList<>();
+        tutorialItems.add(tutorialItem);
         tutorialItems.add(tutorialItem1);
         tutorialItems.add(tutorialItem2);
         tutorialItems.add(tutorialItem3);

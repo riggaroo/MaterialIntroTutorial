@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:clipToPadding="false"
-    android:clipChildren="false"
-    tools:background="#000000">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                tools:background="#000000">
 
     <TextView
         android:id="@+id/fragment_help_tutorial_subtitle_text"
@@ -24,6 +24,7 @@
         android:padding="8dp"
         android:textColor="@color/tutorial_subtitleTextColor"
         android:textSize="16sp"
+        android:visibility="gone"
         tools:text="Line 2 of this description" />
 
     <TextView
@@ -41,6 +42,7 @@
         android:layout_marginLeft="36dp"
         android:layout_marginRight="36dp"
         android:textSize="24sp"
+        android:visibility="gone"
         tools:text="Browse this wonderful tutorial." />
 
     <ImageView
@@ -50,7 +52,7 @@
         android:layout_above="@id/fragment_help_tutorial_text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:scaleType="fitCenter" />
+        android:scaleType="centerCrop" />
     <ImageView
         android:id="@+id/fragment_help_tutorial_imageview"
         android:layout_width="match_parent"
@@ -59,5 +61,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         tools:src="@drawable/ic_navigate_next"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        />
 </RelativeLayout>

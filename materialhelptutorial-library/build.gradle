@@ -2,15 +2,15 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.4.0"
-group = "za.co.riggaroo"
+version = "1.5.0"
+group = 'com.github.isaintmartin'
 
 def siteUrl = 'https://github.com/spongebobrf/MaterialIntroTutorial'
 def gitUrl = 'https://github.com/spongebobrf/MaterialIntroTutorial.git'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         minSdkVersion 11
