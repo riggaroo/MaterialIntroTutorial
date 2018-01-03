@@ -23,8 +23,8 @@ import za.co.riggaroo.materialhelptutorial.view.CirclePageIndicator;
 
 public class MaterialTutorialActivity extends AppCompatActivity implements MaterialTutorialContract.View {
 
-    private static final String TAG = "MaterialTutActivity";
     public static final String MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS = "tutorial_items";
+    private static final String TAG = "MaterialTutActivity";
     private ViewPager mHelpTutorialViewPager;
     private View mRootView;
     private TextView mTextViewSkip;
@@ -63,7 +63,6 @@ public class MaterialTutorialActivity extends AppCompatActivity implements Mater
         mDoneButton.setOnClickListener(finishTutorialClickListener);
 
 
-
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +72,11 @@ public class MaterialTutorialActivity extends AppCompatActivity implements Mater
             }
         });
         List<TutorialItem> tutorialItems = getIntent().getParcelableArrayListExtra(MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS);
-        materialTutorialPresenter.loadViewPagerFragments(tutorialItems);
+        if (tutorialItems == null) {
+            showEndTutorial();
+        } else {
+            materialTutorialPresenter.loadViewPagerFragments(tutorialItems);
+        }
     }
 
     private void setStatusBarColor() {
