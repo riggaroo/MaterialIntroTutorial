@@ -40,6 +40,12 @@ public class MaterialTutorialPresenter implements MaterialTutorialContract.UserA
             fragments.add(helpTutorialImageFragment);
         }
         tutorialView.setViewPagerFragments(fragments);
+
+        if (tutorialItems.size() == 1) {
+            tutorialView.showDoneButton();
+        } else {
+            tutorialView.showSkipButton();
+        }
     }
 
     @Override
