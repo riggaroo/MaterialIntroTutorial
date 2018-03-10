@@ -2,7 +2,7 @@
     package="za.co.riggaroo.materialhelptutorial"
     >
 
-    <application android:allowBackup="true" android:label="@string/app_name"
+    <application android:allowBackup="true"
         android:supportsRtl="true">
 
     </application>
